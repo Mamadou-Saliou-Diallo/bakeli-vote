@@ -296,6 +296,7 @@ select{
   border-radius: 10px;
   font-weight: bold;
   text-align: center;
+  text-decoration: none;
   }
 @media screen and (max-width: 680px) {
   button{
@@ -525,6 +526,7 @@ select{
       border-radius: 10px;
       font-weight: bold;
       text-align: center;
+      text-decoration: none;
       }
   .h1-bienvenu{
     text-align: center;
