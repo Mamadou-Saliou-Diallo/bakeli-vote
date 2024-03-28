@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="style/bootstrap.css"/>
           <!-- responsive style -->
     <link href="style/responsive.css" rel="stylesheet" />
-    <title>Page d'accueille</title>
+    <title>Login</title>
 </head>
 <body>
     <!-- header section strats -->
@@ -21,7 +21,7 @@
             </a>
             <ul class="navbar-nav ">
                 <li class="nav-item">
-                  <a class="nav-link" href="index.html"><span class="connexion">Acceuil </span></a>
+                  <a class="nav-link" href="index.html">Acceuil</a>
                 </li>
             </ul>
           </form>
@@ -29,19 +29,81 @@
       </div>
     </header>
     <!-- end header section -->
-    <form class="header">
+    <form class="header" id="MainForm">
+
         </div>
-            <h1 class="h1-bienvenu">Bienvenue à<em class="bak">BAKELI</em> <em class="vote"> VOTE</em></h1>
+            <h1> Bienvenue à  <em class="bak">BAKELI</em> <em class="vote"> VOTE</em></h1>
             <p>Connectez-vous</p>
-            <input class="inp" type="email" name="email" id="email" placeholder="Email"><br>
-            <input class="inp" type="password" name="pass" id="pass" placeholder="Mot de pass"><br>
+            <input class="inp" type="email" name="emailInp" id="emailInp" placeholder="Email"><br>
+            <input class="inp" type="password" name="passwordInp" id="passwordInp" placeholder="Mot de passe"><br>
         <div class="probable">
-            <a  class="button3" href="vote.html">Connecter</a>
-            <a class="m-oublie" href="oublie.html"><span class="connexion-c"> Mot de pass oublié?</span></a>
+            <button type="submit" id="submit"  class="button">Se Connecter</button><br>
+            <a id="forgotpasswordlabel" class="m-oublie">Mot de pass oublié?</a>
         </div>
         <div class="fiable">
           Vous n’avez pas de compte ? <a href="inscription.html">Inscrivez-vous</a>    
         </div>
     </form>
+
+
+
+
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+      import { getDatabase, get, ref, child } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+      import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } 
+      from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyChN97CiZ8SPkVLtpjQoxTgkEeC0fGfS2s",
+        authDomain: "project1-4d6be.firebaseapp.com",
+        projectId: "project1-4d6be",
+        storageBucket: "project1-4d6be.appspot.com",
+        messagingSenderId: "1044108154910",
+        appId: "1:1044108154910:web:5aab21447ddc68a46f760f"
+      };
+    
+      const app = initializeApp(firebaseConfig);
+      const db = getDatabase();
+      const auth = getAuth(app);
+      const dbref = ref(db);
+
+      let EmailInp = document.getElementById('emailInp');
+      let PasswordInp = document.getElementById('passwordInp');
+      let MainForm = document.getElementById('MainForm');
+      let Forgotpasswordlabel = document.getElementById('forgotpasswordlabel');
+
+      let SignInUser = evt => {
+        evt.preventDefault();
+
+        signInWithEmailAndPassword(auth, EmailInp.value, PasswordInp.value)
+        .then((credentials)=>{
+          console.log(credentials);
+          alert('Authentification réussie ! Vous êtes maintenant connecté à notre plateforme de vote en ligne.');
+
+        })
+        .catch((error)=>{
+          // alert(error.message);
+          alert("Email ou mot de passe incorrect!!!")
+          console.log(error.code);
+          console.log(error.message);
+        })
+      }
+
+      let ForgotPassword = ()=>{
+        sendPasswordResetEmail(auth, EmailInp.value)
+        .then(()=>{
+          alert("Un e-mail contenant un lien de réinitialisation de mot de passe a été envoyé à votre adresse e-mail enregistrée")
+        })
+        .catch((error)=>{
+          console.log(error.code);
+          console.log(error.message);
+        })
+      }
+
+      MainForm.addEventListener('submit', SignInUser);
+      Forgotpasswordlabel.addEventListener('click', ForgotPassword);
+    </script>
 </body>
 </html>
