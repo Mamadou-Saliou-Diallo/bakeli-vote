@@ -5,6 +5,7 @@ body {
   font-family: 'Lato', sans-serif;
   color: #040000;
   box-sizing: border-box;
+  overflow-y: hidden;
 }
 .rouge{
   color: red;
