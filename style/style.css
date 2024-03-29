@@ -5,6 +5,7 @@ body {
   font-family: 'Lato', sans-serif;
   color: #040000;
   box-sizing: border-box;
+  overflow-y: hidden;
 }
 .rouge{
   color: red;
@@ -169,6 +170,16 @@ a:focus {
   cursor: pointer;
 }
 .button1{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #009688;
+  width: 30%;
+  height: 40px;
+  margin-left: 100px;
+}
+/* .button2{
   text-align: center;
   background-color: #009688;
   color: white;
@@ -176,16 +187,7 @@ a:focus {
   width: 20%;
   height: 30px;
   border-radius: 5px;
-}
-.button2{
-  text-align: center;
-  background-color: #F89617;
-  color: white;
-  border: none;
-  width: 20%;
-  height: 30px;
-  border-radius: 5px;
-}
+} */
 
 .button1:hover{
   text-decoration: none;
@@ -294,10 +296,10 @@ select{
   border-radius: 10px;
   color: white;
   font-weight: bold;
-  background-color: #F89617;
+  background-color: #009688;
 }
 .button3{
-  background-color: #ff8a1d;
+  background-color: #009688;
   width: 30%;
   height: 30px;
   color: white;
@@ -323,10 +325,8 @@ select{
   }
   .probable{
       display: flex;
-      justify-content: space-between;
       width: 50%;
-      flex-wrap: wrap;
-      padding: 10px;
+     
   }
   .m-oublie{
       padding: 20px;
@@ -507,7 +507,7 @@ select{
   }
   .button{
     text-align: center;
-    background-color: #ff8a1d;
+    background-color: #009688;
     color: white;
     border: none;
     width: 30%;
@@ -516,18 +516,29 @@ select{
     border-radius: 5px;
   }
   .button1{
-  background-color: #ff8a1d;
-  width: 30%;
-  margin-left: 10px;
-  }
-  .button2{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #009688;
     width: 30%;
+    height: 40px;
+    margin-left: 100px;
+  }
+  .blanc{
     color: white;
+  }
+  .button2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #009688;
+    width: 30%;
+    height: 30px;
     margin-left: 10px;
     }
     .button3{
-      background-color: #ff8a1d;
+      background-color: #009688;
       width: 35%;
       height: 30px;
       color: white;
