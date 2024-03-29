@@ -40,60 +40,12 @@
             <input class="inp" type="password" name="passwordInp" id="passwordInp" placeholder="Mot de pass"><br>
             <input class="inp" type="password" name="confirmpasswordInp" id="confirmpasswordInp" placeholder="Comfirme mot de pass"><br>
         <div class="probable">
-            <a href="connexion.html" class="button">Retour</a>
-            <button  type="submit" class="button">S'inscrire</button>
+            <!-- <a href="connexion.html" class="button">Retour</a> -->
+            <button  type="submit" class="button" id="submit">S'inscrire</button>
         </div>
     </form>
 
-
-
-
-
-    <script type="module">
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
-      import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
-      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-auth.js";
-
-      const firebaseConfig = {
-        apiKey: "AIzaSyChN97CiZ8SPkVLtpjQoxTgkEeC0fGfS2s",
-        authDomain: "project1-4d6be.firebaseapp.com",
-        projectId: "project1-4d6be",
-        storageBucket: "project1-4d6be.appspot.com",
-        messagingSenderId: "1044108154910",
-        appId: "1:1044108154910:web:5aab21447ddc68a46f760f"
-      };
-    
-      const app = initializeApp(firebaseConfig);
-      const db = getDatabase();
-      const auth = getAuth(app);
-
-      let EmailInp = document.getElementById('emailInp');
-      let FnameInp = document.getElementById('fnameInp');
-      let NumberInp = document.getElementById('numberInp');
-      let PasswordInp = document.getElementById('passwordInp');
-      let ConfirmpasswordInp = document.getElementById('confirmpasswordInp');
-      let MainForm = document.getElementById('MainForm');
-
-      let RegisterUser = evt => {
-        evt.preventDefault();
-
-        createUserWithEmailAndPassword(auth, EmailInp.value, PasswordInp.value)
-        .then((credentials)=>{
-          console.log(credentials);
-          alert('Félicitations ! Vous vous êtes inscrit avec succès.');
-      
-        })
-        .catch((error)=>{
-
-          alert(error.message);
-          console.log(error.code);
-          console.log(error.message);
-        })
-      }
-
-      MainForm.addEventListener('submit', RegisterUser);
-    </script>
-
+    <script type="module" src="inscription.js" defer></script>
 
 </body>
 </html>
