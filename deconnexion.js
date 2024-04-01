@@ -30,7 +30,7 @@ logoutBtn.addEventListener("click", function(event){
 
     auth.signOut().then(() => {
         alert("Déconnexion réussie, rediriger vers la page de connexion");
-        window.location.href = 'connexion.html';
+        window.location.href = 'index.html';
     }).catch((error) => {
         // Gérer les erreurs de déconnexion
         alert("Une erreur s'est produite lors de la déconnexion : " + error.message);
