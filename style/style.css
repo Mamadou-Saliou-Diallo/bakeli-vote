@@ -117,7 +117,6 @@ a:focus {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("../images/vot.jpeg");
   background-position: left;
   justify-content: center;
   margin: auto;
@@ -127,7 +126,7 @@ a:focus {
 
 .inp{
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 1px solid grey;
   width: 30%;
   height: 40px;
 }
@@ -174,9 +173,8 @@ a:focus {
   background-color: #009688;
   color: white;
   border: none;
-  width: 20%;
-  height: 30px;
-  border-radius: 5px;
+  padding: 10px 20px;
+  border-radius: 10px;
 }
 
 .button:hover{
@@ -288,6 +286,12 @@ select{
   font-weight: bold;
   background-color: #F89617;
 }
+
+#MainForm{
+  transform: translateY(-8%);
+}
+
+
 @media screen and (max-width: 680px) {
   button{
       background-color: #009688;
@@ -297,9 +301,13 @@ select{
       height: 30px;
       font-size: 100%;
   }
+
+  #pad{
+    padding: 5px 10px;
+  }
   .inp{
       border: none;
-      border-bottom: 2px solid black;
+      border-bottom: 1px solid grey;
       width: 70%;
       height: 40px;
   }
@@ -372,14 +380,14 @@ select{
   }
   .inpt{
       border: none;
-      border-bottom: 2px solid black;
+      border-bottom: 1px solid grey;
       width: 100%;
       /* background-color: #009688; */
       color: white;
       font-weight: bold;
-      height: 40px;
+      /* height: 40px; */
       font-size: 30px;
-      opacity: 0.7;
+      /* opacity: 0.7; */
   }
   select{
       font-size: 35px ;
@@ -426,6 +434,18 @@ select{
       color: white;
       font-weight: bold;
       background-color: #F89617;
+  }
+
+  .bak{
+    font-size: 20px;
+  }
+
+  #h1{
+    font-size: 20px;
+  }
+
+  #submit{
+    padding-bottom: 30px;
   }
   
 }
