@@ -27,7 +27,7 @@ submit.addEventListener("click", function(event){
     // Signed up 
     const user = userCredential.user;
     // alert("création du compte....")
-    window.location.href='vote.html'
+    window.location.href='connexion.html'
     // ...
   })
   .catch((error) => {

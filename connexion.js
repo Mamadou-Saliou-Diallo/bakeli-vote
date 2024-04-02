@@ -31,6 +31,7 @@ submit.addEventListener("click", function(event){
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
+    // alert(email)
     // alert("création du compte....")
     window.location.href='vote.html'
     // ...
@@ -59,3 +60,7 @@ reset.addEventListener('click', function(e){
     alert(errorMessage)
   });
 })
+
+
+
+
