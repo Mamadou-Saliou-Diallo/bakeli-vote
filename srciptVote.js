@@ -24,6 +24,14 @@ let button = document.getElementById('choisir');
 let incr1 = 0;
 let incr2 = 0;
 
+if (localStorage.getItem('hasVoted')) {
+  // Désactiver les boutons de vote s'il a déjà voté
+  document.getElementById('vote1').disabled = true;
+  document.getElementById('vote2').disabled = true;
+  document.getElementById('choisir').disabled = true;
+}
+
+
 // Ajouter un écouteur d'événements pour le clic sur le bouton "choisir"
 button.addEventListener('click', function () {
   // Désactiver le bouton "choisir" après le vote
@@ -32,6 +40,9 @@ button.addEventListener('click', function () {
   document.getElementById('choisir').disabled = true;
   // console.log("Vous avez déjà voté");
   
+  // Enregistrer dans le stockage local que l'utilisateur a voté
+  localStorage.setItem('hasVoted', true);
+
   // Vérifier quelle option a été choisie
   let option = document.querySelector('input[name="president"]:checked').value;
   
@@ -71,6 +82,13 @@ let buttonSG = document.getElementById('choisirSG');
 let incrSG1 = 0;
 let incrSG2 = 0;
 
+if (localStorage.getItem('hasVotedSG')) {
+  // Désactiver les boutons de vote s'il a déjà voté
+  document.getElementById('secretaire1').disabled = true;
+  document.getElementById('secretaire2').disabled = true;
+  document.getElementById('choisirSG').disabled = true;
+}
+
 // Ajouter un écouteur d'événements pour le clic sur le bouton "choisir"
 buttonSG.addEventListener('click', function () {
   // Désactiver le bouton "choisir" après le vote
@@ -78,6 +96,9 @@ buttonSG.addEventListener('click', function () {
   document.getElementById('secretaire2').disabled = true;
   document.getElementById('choisirSG').disabled = true;
   // console.log("Vous avez déjà voté");
+
+   // Enregistrer dans le stockage local que l'utilisateur a voté
+  localStorage.setItem('hasVotedSG', true);
   
   // Vérifier quelle option a été choisie
   let option = document.querySelector('input[name="secretaire"]:checked').value;
@@ -121,6 +142,16 @@ let incrORG3=0;
 let incrORG4=0;
 let incrORG5=0;
 
+if (localStorage.getItem('hasVotedORG')) {
+  // Désactiver les boutons de vote s'il a déjà voté
+  document.getElementById('organisation1').disabled = true;
+  document.getElementById('organisation2').disabled = true;
+  document.getElementById('organisation3').disabled = true;
+  document.getElementById('organisation4').disabled = true;
+  document.getElementById('organisation5').disabled = true;
+  document.getElementById('choisirORG').disabled = true;
+}
+
 // Ajouter un écouteur d'événements pour le clic sur le bouton "choisirORG"
 buttonORG.addEventListener('click', function () {
   // Désactiver le bouton "choisirORG" après le vote
@@ -131,6 +162,9 @@ buttonORG.addEventListener('click', function () {
   document.getElementById('organisation5').disabled = true;
   document.getElementById('choisirORG').disabled = true;
   // console.log("Vous avez déjà voté");
+
+    // Enregistrer dans le stockage local que l'utilisateur a voté
+    localStorage.setItem('hasVotedORG', true);
   
   // Vérifier quelle option a été choisie
   let option = document.querySelector('input[name="organisation"]:checked').value;
@@ -165,7 +199,7 @@ buttonORG.addEventListener('click', function () {
 // Function to update vote count in Firestore
 function updateVoteORG(option, voteCount) {
   // Mettre à jour le nombre de votes dans Firestore pour l'option spécifiée
-  const docRef = doc(db, "organisation", option);
+  const docRef = doc(db, "oragnisation", option);
   updateDoc(docRef, {
     voix: increment(voteCount)
   })
@@ -184,6 +218,14 @@ let buttonCOM = document.getElementById('choisirCOM');
 let incrCOM1 = 0;
 let incrCOM2 = 0;
 
+if (localStorage.getItem('hasVotedCOM')) {
+  // Désactiver les boutons de vote s'il a déjà voté
+  document.getElementById('communication1').disabled = true;
+  document.getElementById('communication2').disabled = true;
+  document.getElementById('choisirCOM').disabled = true;
+}
+
+
 // Ajouter un écouteur d'événements pour le clic sur le bouton "choisirCOM"
 buttonCOM.addEventListener('click', function () {
   // Désactiver le bouton "choisirCOM" après le vote
@@ -191,6 +233,9 @@ buttonCOM.addEventListener('click', function () {
   document.getElementById('communication2').disabled = true;
   document.getElementById('choisirCOM').disabled = true;
   // console.log("Vous avez déjà voté");
+
+   // Enregistrer dans le stockage local que l'utilisateur a voté
+   localStorage.setItem('hasVotedCOM', true);
   
   // Vérifier quelle option a été choisie
   let option = document.querySelector('input[name="communication"]:checked').value;
@@ -231,6 +276,13 @@ let buttonEXT = document.getElementById('choisirEXT');
 let incrEXT1 = 0;
 let incrEXT2 = 0;
 
+if (localStorage.getItem('hasVotedEXT')) {
+  // Désactiver les boutons de vote s'il a déjà voté
+  document.getElementById('exterieur1').disabled = true;
+  document.getElementById('exterieur2').disabled = true;
+  document.getElementById('choisirEXT').disabled = true;
+}
+
 // Ajouter un écouteur d'événements pour le clic sur le bouton "choisirEXT"
 buttonEXT.addEventListener('click', function () {
   // Désactiver le bouton "choisirEXT" après le vote
@@ -238,6 +290,9 @@ buttonEXT.addEventListener('click', function () {
   document.getElementById('exterieur2').disabled = true;
   document.getElementById('choisirEXT').disabled = true;
   // console.log("Vous avez déjà voté");
+
+   // Enregistrer dans le stockage local que l'utilisateur a voté
+   localStorage.setItem('hasVotedEXT', true);
   
   // Vérifier quelle option a été choisie
   let option = document.querySelector('input[name="relation_ext"]:checked').value;
@@ -278,6 +333,13 @@ let buttonTRES = document.getElementById('choisirTRES');
 let incrTRES1 = 0;
 let incrTRES2 = 0;
 
+if (localStorage.getItem('hasVotedTRES')) {
+  // Désactiver les boutons de vote s'il a déjà voté
+  document.getElementById('tresorier1').disabled = true;
+  document.getElementById('tresorier2').disabled = true;
+  document.getElementById('choisirTRES').disabled = true;
+}
+
 // Ajouter un écouteur d'événements pour le clic sur le bouton "choisirTRES"
 buttonTRES.addEventListener('click', function () {
   // Désactiver le bouton "choisirTRES" après le vote
@@ -286,6 +348,9 @@ buttonTRES.addEventListener('click', function () {
   document.getElementById('choisirTRES').disabled = true;
   // console.log("Vous avez déjà voté");
   
+   // Enregistrer dans le stockage local que l'utilisateur a voté
+   localStorage.setItem('hasVotedTRES', true);
+
   // Vérifier quelle option a été choisie
   let option = document.querySelector('input[name="tresorier"]:checked').value;
   
@@ -326,6 +391,14 @@ let incrPEDA1 = 0;
 let incrPEDA2 = 0;
 let incrPEDA3=0;
 
+if (localStorage.getItem('hasVotedPEDA')) {
+  // Désactiver les boutons de vote s'il a déjà voté
+  document.getElementById('pedagogie1').disabled = true;
+  document.getElementById('pedagogie2').disabled = true;
+  document.getElementById('pedagogie3').disabled = true;
+  document.getElementById('choisirPEDA').disabled = true;
+}
+
 // Ajouter un écouteur d'événements pour le clic sur le bouton "choisirPEDA"
 buttonPEDA.addEventListener('click', function () {
   // Désactiver le bouton "choisirPEDA" après le vote
@@ -334,6 +407,9 @@ buttonPEDA.addEventListener('click', function () {
   document.getElementById('pedagogie3').disabled = true;
   document.getElementById('choisirPEDA').disabled = true;
   // console.log("Vous avez déjà voté");
+
+   // Enregistrer dans le stockage local que l'utilisateur a voté
+   localStorage.setItem('hasVotedPEDA', true);
   
   // Vérifier quelle option a été choisie
   let option = document.querySelector('input[name="pedagogie"]:checked').value;
@@ -379,6 +455,14 @@ let incrSPORT1 = 0;
 let incrSPORT2 = 0;
 let incrSPORT3=0;
 
+if (localStorage.getItem('hasVotedSPORT')) {
+  // Désactiver les boutons de vote s'il a déjà voté
+  document.getElementById('sport1').disabled = true;
+  document.getElementById('sport2').disabled = true;
+  document.getElementById('sport3').disabled = true;
+  document.getElementById('choisirSPORT').disabled = true;
+}
+
 // Ajouter un écouteur d'événements pour le clic sur le bouton "choisirSPORT"
 buttonSPORT.addEventListener('click', function () {
   // Désactiver le bouton "choisirSPORT" après le vote
@@ -387,6 +471,9 @@ buttonSPORT.addEventListener('click', function () {
   document.getElementById('sport3').disabled = true;
   document.getElementById('choisirSPORT').disabled = true;
   // console.log("Vous avez déjà voté");
+
+  // Enregistrer dans le stockage local que l'utilisateur a voté
+  localStorage.setItem('hasVotedSPORT', true);
   
   // Vérifier quelle option a été choisie
   let option = document.querySelector('input[name="loisir"]:checked').value;

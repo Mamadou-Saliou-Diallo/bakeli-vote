@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: sans-serif;
   font-weight: 100;
-  overflow: scroll;
+  /* overflow: scroll; */
   background-image: url("../images/vot.jpeg");
   background-position: center;
   background-size: 100%;
