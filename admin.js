@@ -30,10 +30,15 @@ submit.addEventListener("click", function(event){
     signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed up 
-    const user = userCredential.user;
-    // alert("création du compte....")
-    window.location.href='result.html'
-    // ...
+    if (email === "adminMoustapha@gmail.com" || email === "adminMenza@gmail.com") {
+      window.location.href='result.html'
+    } else {
+      
+      const user = userCredential.user;
+      alert("Vous n'êtes pas un Administrateur!")
+      window.location.href='connexion.html'
+      // ...
+    }
   })
   .catch((error) => {
     const errorCode = error.code;
