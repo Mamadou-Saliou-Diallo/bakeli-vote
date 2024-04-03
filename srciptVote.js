@@ -395,7 +395,7 @@ if (localStorage.getItem('hasVotedPEDA')) {
   // Désactiver les boutons de vote s'il a déjà voté
   document.getElementById('pedagogie1').disabled = true;
   document.getElementById('pedagogie2').disabled = true;
-  document.getElementById('pedagogie2').disabled = true;
+  document.getElementById('pedagogie3').disabled = true;
   document.getElementById('choisirPEDA').disabled = true;
 }
 
