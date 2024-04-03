@@ -66,14 +66,14 @@ auth.onAuthStateChanged(user => {
             if (!querySnapshot.empty) {
                 // L'utilisateur est dans la liste des déconnectés, refuser la connexion
                 auth.signOut().then(() => {
-                    // alert("Vous avez déja voté!");
+                    alert("Vous avez déja voté!");
                     window.location.href = 'index.html';
                 }).catch((error) => {
                     alert("Une erreur s'est produite lors de la déconnexion : " + error.message);
                 });
             } else {
                 // L'utilisateur n'est pas dans la liste des déconnectés, autoriser la connexion
-                alert("Vous êtes autorisé à vous connecter.");
+                // alert("Vous êtes autorisé à vous connecter.");
             }
         }).catch((error) => {
             alert("Une erreur s'est produite lors de la vérification de l'email : " + error.message);
