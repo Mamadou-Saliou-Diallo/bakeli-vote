@@ -209,7 +209,7 @@ a:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("../images/vot.jpeg"); 
+  /* background-image: url("../images/vot.jpeg");  */
   background-position: left;
   background-size: 90%;
   margin-top: -10%;
