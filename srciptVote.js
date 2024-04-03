@@ -184,7 +184,7 @@ buttonORG.addEventListener('click', function () {
     updateVoteORG("3", incrORG3); // Mettre à jour le vote pour l'option 2
   }else if (option === "4") {
     incrORG4++;
-    console.log(incrORG3, "test incrORG3");
+    console.log(incrORG4, "test incrORG4");
     updateVoteORG("4", incrORG4); // Mettre à jour le vote pour l'option 2
   }else if (option === "5") {
     incrORG5++;
