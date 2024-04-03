@@ -168,14 +168,25 @@ a:focus {
   font-weight: bold;
   cursor: pointer;
 }
-.button{
+.button1{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #009688;
+  width: 30%;
+  height: 40px;
+  margin-left: 100px;
+}
+/* .button2{
   text-align: center;
   background-color: #009688;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 10px;
-}
+  width: 20%;
+  height: 30px;
+  border-radius: 5px;
+} */
 
 .button:hover{
   text-decoration: none;
@@ -284,7 +295,7 @@ select{
   border-radius: 10px;
   color: white;
   font-weight: bold;
-  background-color: #F89617;
+  background-color: #009688;
 }
 
 #MainForm{
@@ -313,10 +324,8 @@ select{
   }
   .probable{
       display: flex;
-      justify-content: space-between;
       width: 50%;
-      flex-wrap: wrap;
-      padding: 10px;
+     
   }
   .m-oublie{
       padding: 20px;
