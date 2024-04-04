@@ -291,6 +291,23 @@ select{
   transform: translateY(-8%);
 }
 
+#pad{
+  background-color: #28AF60;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+#pad:hover{
+ background-color: #19222F;
+}
+#submit{
+  background-color: #28AF60;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+#submit:hover{
+ background-color: #19222F;
+}
+
 
 @media screen and (max-width: 680px) {
   button{
@@ -438,10 +455,12 @@ select{
 
   .bak{
     font-size: 20px;
+    color: #28AF60;
   }
 
   #h1{
     font-size: 20px;
+    
   }
 
   #submit{

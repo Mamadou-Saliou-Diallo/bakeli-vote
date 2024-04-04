@@ -170,6 +170,9 @@ body {
 .btn-primary {
   background-color: var(--go-green);
   color: var(--white);
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
 }
 
 .btn-primary:is(:hover, :focus) { background-color: var(--rich-black-fogra-29-1); }
@@ -349,7 +352,7 @@ body {
   font-size: 20px;
   padding: 20px;
   border-radius: 50%;
-  animation: pulse 2s ease infinite;
+  /* animation: pulse 2s ease infinite; */
 }
 
 @keyframes pulse {
@@ -383,12 +386,15 @@ body {
 
 @media (max-width:700px){
   .img-holder {
-    display: none;
+    margin-top: -10%;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
   }
+
+ 
   
-  .img-cover {
-   display: none;
-  }
+  
 }
 
 
