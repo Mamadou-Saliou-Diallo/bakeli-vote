@@ -171,7 +171,7 @@ body {
   background-color: var(--go-green);
   color: var(--white);
   text-align: center;
-  font-size: 10px;
+  /* font-size: 10px; */
   font-weight: bold;
 }
 
