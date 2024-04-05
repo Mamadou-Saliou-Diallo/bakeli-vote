@@ -512,3 +512,5 @@ function updateVoteSPORT(option, voteCount) {
   });
 }
 
+
+alert("Nous tenons à vous rappeler que vous avez le droit de voter pour un seul candidat lors de cette élection. Une fois que vous avez exprimé votre choix, vous ne pourrez plus voter à nouveau.\n\nVeuillez noter également que si vous vous déconnectez de votre compte, vous ne pourrez plus participer au vote. Assurez-vous de faire votre choix en toute connaissance de cause.\n\nAttention : Ce message est important !");
