@@ -14,31 +14,74 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 
-// submit
-const submit= document.getElementById('submit');
-submit.addEventListener("click", function(event){
+// Écouteur d'événement pour le formulaire d'inscription
+const submit = document.getElementById('submit');
+submit.addEventListener("click", async function(event){
     event.preventDefault();
 
-    // inputs
-    const email= document.getElementById('emailInp').value
-    const password= document.getElementById('passwordInp').value
-    createUserWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up 
-    if (email === "adminMoustapha@gmail.com" || email === "adminMenza@gmail.com") {
-      window.location.href='admin.html'
-    } else {
-      
-      const user = userCredential.user;
-      // alert("création du compte....")
-      window.location.href='connexion.html'
-      // ...
+    // Récupération des valeurs des champs email et password
+    const email = document.getElementById('emailInp').value;
+    const password = document.getElementById('passwordInp').value;
+
+    // Vérification de la validité de l'adresse e-mail
+    if (!isValidEmail(email)) {
+        // Afficher un toast d'erreur
+        Swal.fire({
+            icon: 'error',
+            title: 'Erreur',
+            text: 'Adresse e-mail invalide.',
+            showConfirmButton: false,
+            timer: 5000 // Durée du toast en millisecondes (5 secondes)
+        });
+        return; // On arret la fonction si l'adresse e-mail est invalide
     }
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage)
-    // ..
-  });
-})
+
+    // Vérification de la longueur du mot de passe
+    if (password.length < 6) {
+        // Afficher un toast d'erreur
+        Swal.fire({
+            icon: 'error',
+            title: 'Erreur',
+            text: 'Le mot de passe doit contenir au moins 6 caractères.',
+            showConfirmButton: false,
+            timer: 5000 // Durée du toast en millisecondes (5 secondes)
+        });
+        return; // On arrete la fonction si le mot de passe est trop court
+    }
+
+    try {
+        // Créer l'utilisateur avec Firebase Authentication
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+
+        // Afficher un toast de succès
+        Swal.fire({
+            icon: 'success',
+            title: 'Inscription réussie!',
+            showConfirmButton: false,
+            timer: 5000 // Durée du toast en millisecondes (4 secondes)
+        }).then(() => {
+            window.location.href='connexion.html';
+        });
+    } catch (error) {
+        // Capturer l'erreur et afficher un toast d'erreur avec le message personnalisé
+        let errorMessage = error.message;
+        if (errorMessage.includes('auth/email-already-in-use')) {
+            errorMessage = 'Cette adresse e-mail est déjà utilisée.';
+        }
+        Swal.fire({
+            icon: 'error',
+            title: 'Erreur',
+            text: errorMessage,
+            showConfirmButton: false,
+            timer: 5000 // Durée du toast en millisecondes (5 secondes)
+        });
+    }
+});
+
+// Fonction pour valider une adresse e-mail
+function isValidEmail(email) {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+

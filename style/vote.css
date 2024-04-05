@@ -155,6 +155,16 @@ button:active {
   border-radius: 20px;
 }
 
+#logoutBtn{
+  background-color: #28AF60;
+  padding: 12px 20px;
+  border-radius: 5px;
+
+}
+#logoutBtn:hover{
+ background-color: #19222F;
+}
+
 /* ************* Responsive *************** */
 @media screen and (max-width:1224px){
   .navbar-brand{
