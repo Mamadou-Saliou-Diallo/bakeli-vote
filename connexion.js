@@ -15,52 +15,48 @@ const firebaseConfig = {
   messagingSenderId: "752099241013",
   appId: "1:752099241013:web:83fc6071dd7a04b8f1157c",
 };
-
+//
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-
+// mamadou Saliou
 // submit
-const submit= document.getElementById('submit');
-submit.addEventListener("click", function(event){
-    event.preventDefault();
-
-    // inputs
-    const email= document.getElementById('emailInp').value
-    const password= document.getElementById('passwordInp').value
-    signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    // alert(email)
-    // alert("création du compte....")
-    window.location.href='vote.html'
-    // ...
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage)
-    // ..
-  });
-})
+const submit = document.getElementById("submit");
+submit.addEventListener("click", function (event) {
+  event.preventDefault();
+  //je suis mamadou Saliou DIALLO bakeliste en programmation depuis
+  // inputs
+  const email = document.getElementById("emailInp").value;
+  const password = document.getElementById("passwordInp").value;
+  signInWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed up
+      const user = userCredential.user;
+      // alert(email)
+      // alert("création du compte....")
+      window.location.href = "vote.html";
+      // ...
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+      // ..
+    });
+});
 
 // reset
-const reset= document.getElementById('forgotpasswordlabel');
-reset.addEventListener('click', function(e){
+const reset = document.getElementById("forgotpasswordlabel");
+reset.addEventListener("click", function (e) {
   e.preventDefault();
-  const email=document.getElementById('emailInp').value
+  const email = document.getElementById("emailInp").value;
   sendPasswordResetEmail(auth, email)
-  .then(() => {
-    alert('Un Email vous a été envoyé!')
-    // ..
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage)
-  });
-})
-
-
-
-
+    .then(() => {
+      alert("Un Email vous a été envoyé!");
+      // ..
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+});
