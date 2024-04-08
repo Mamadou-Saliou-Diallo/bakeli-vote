@@ -61,7 +61,15 @@ submit.addEventListener("click", async function(event){
             showConfirmButton: false,
             timer: 5000 // Durée du toast en millisecondes (4 secondes)
         }).then(() => {
-            window.location.href='connexion.html';
+            // Vérifier si l'utilisateur est un administrateur
+            if (email === 'adminMariama@gmail.com' || email=== 'adminMoustapha@gmail.com') {
+                 // Rediriger vers la page d'administration
+                 window.location.href = 'admin.html';
+                 } else {
+                 // Rediriger vers la page de connexion normale
+                 window.location.href = 'connexion.html';
+             }
+            // window.location.href='connexion.html';
         });
     } catch (error) {
         // Capturer l'erreur et afficher un toast d'erreur avec le message personnalisé

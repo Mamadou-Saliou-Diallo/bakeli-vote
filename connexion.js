@@ -62,7 +62,14 @@ submit.addEventListener("click", function(event) {
   .then((userCredential) => {
     const user = userCredential.user;
     showToast('success', 'Connexion réussie!', 'Vous êtes maintenant connecté.');
-    window.location.href = 'vote.html'; // Redirection après connexion réussie
+    // Vérifier si l'utilisateur est un administrateur
+    if (email === 'adminMariama@gmail.com' || email=== 'adminMoustapha@gmail.com') {
+      // Rediriger vers la page d'administration
+      window.location.href = 'resultat-vote.html';
+      } else {
+      // Rediriger vers la page de connexion normale
+      window.location.href = 'vote.html'; // Redirection après connexion réussie
+    }
   })
   .catch((error) => {
     const errorMessage = handleAuthError(error); // Utilisation de la fonction handleAuthError

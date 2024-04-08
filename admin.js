@@ -30,8 +30,8 @@ submit.addEventListener("click", function(event){
     signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed up 
-    if (email === "adminMoustapha@gmail.com" || email === "adminMenza@gmail.com") {
-      window.location.href='result.html'
+    if (email === "adminMoustapha@gmail.com" || email === "adminMariama@gmail.com") {
+      window.location.href='resultat-vote.html'
     } else {
       
       const user = userCredential.user;
