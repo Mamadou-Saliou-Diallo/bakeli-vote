@@ -49,15 +49,15 @@ button.addEventListener('click', function () {
   // Incrémenter le compteur de votes pour l'option choisie
   if (option === "1") {
     incr1++;
-    console.log(incr1, "test incr1");
+    // console.log(incr1, "test incr1");
     updateVote("1", incr1); // Mettre à jour le vote pour l'option 1
   } else if (option === "2") {
     incr2++;
-    console.log(incr2, "test incr2");
+    // console.log(incr2, "test incr2");
     updateVote("2", incr2); // Mettre à jour le vote pour l'option 2
   }
   else{
-    console.log('choisissez un cadidat');
+    // console.log('choisissez un cadidat');
   }
 });
 
@@ -69,7 +69,7 @@ function updateVote(option, voteCount) {
     voix: increment(voteCount)
   })
   .then(() => {
-    console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
+    // console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
   })
   .catch((error) => {
     console.error("Erreur lors de la mise à jour du nombre de votes pour l'option", option, ": ", error);
@@ -106,15 +106,15 @@ buttonSG.addEventListener('click', function () {
   // Incrémenter le compteur de votes pour l'option choisie
   if (option === "1") {
     incrSG1++;
-    console.log(incrSG1, "test incrSG1");
+    // console.log(incrSG1, "test incrSG1");
     updateVoteSG("1", incrSG1); // Mettre à jour le vote pour l'option 1
   } else if (option === "2") {
     incrSG2++;
-    console.log(incrSG2, "test incrSG2");
+    // console.log(incrSG2, "test incrSG2");
     updateVoteSG("2", incrSG2); // Mettre à jour le vote pour l'option 2
   }
   else{
-    console.log('choisissez un cadidat');
+    // console.log('choisissez un cadidat');
   }
 });
 
@@ -126,7 +126,7 @@ function updateVoteSG(option, voteCount) {
     voix: increment(voteCount)
   })
   .then(() => {
-    console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
+    // console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
   })
   .catch((error) => {
     console.error("Erreur lors de la mise à jour du nombre de votes pour l'option", option, ": ", error);
@@ -172,27 +172,27 @@ buttonORG.addEventListener('click', function () {
   // Incrémenter le compteur de votes pour l'option choisie
   if (option === "1") {
     incrORG1++;
-    console.log(incrORG1, "test incrORG1");
+    // console.log(incrORG1, "test incrORG1");
     updateVoteORG("1", incrORG1); // Mettre à jour le vote pour l'option 1
   } else if (option === "2") {
     incrORG2++;
-    console.log(incrORG2, "test incrORG2");
+    // console.log(incrORG2, "test incrORG2");
     updateVoteORG("2", incrORG2); // Mettre à jour le vote pour l'option 2
   }else if (option === "3") {
     incrORG3++;
-    console.log(incrORG3, "test incrORG3");
+    // console.log(incrORG3, "test incrORG3");
     updateVoteORG("3", incrORG3); // Mettre à jour le vote pour l'option 2
   }else if (option === "4") {
     incrORG4++;
-    console.log(incrORG4, "test incrORG4");
+    // console.log(incrORG4, "test incrORG4");
     updateVoteORG("4", incrORG4); // Mettre à jour le vote pour l'option 2
   }else if (option === "5") {
     incrORG5++;
-    console.log(incrORG3, "test incrORG3");
+    // console.log(incrORG3, "test incrORG3");
     updateVoteORG("5", incrORG5); // Mettre à jour le vote pour l'option 2
   }
   else{
-    console.log('choisissez un cadidat');
+    // console.log('choisissez un cadidat');
   }
 });
 
@@ -204,7 +204,7 @@ function updateVoteORG(option, voteCount) {
     voix: increment(voteCount)
   })
   .then(() => {
-    console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
+    // console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
   })
   .catch((error) => {
     console.error("Erreur lors de la mise à jour du nombre de votes pour l'option", option, ": ", error);
@@ -243,15 +243,15 @@ buttonCOM.addEventListener('click', function () {
   // Incrémenter le compteur de votes pour l'option choisie
   if (option === "1") {
     incrCOM1++;
-    console.log(incrCOM1, "test incrCOM1");
+    // console.log(incrCOM1, "test incrCOM1");
     updateVoteCOM("1", incrCOM1); // Mettre à jour le vote pour l'option 1
   } else if (option === "2") {
     incrCOM2++;
-    console.log(incrCOM2, "test incrCOM2");
+    // console.log(incrCOM2, "test incrCOM2");
     updateVoteCOM("2", incrCOM2); // Mettre à jour le vote pour l'option 2
   }
   else{
-    console.log('choisissez un cadidat');
+    // console.log('choisissez un cadidat');
   }
 });
 
@@ -263,7 +263,7 @@ function updateVoteCOM(option, voteCount) {
     voix: increment(voteCount)
   })
   .then(() => {
-    console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
+    // console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
   })
   .catch((error) => {
     console.error("Erreur lors de la mise à jour du nombre de votes pour l'option", option, ": ", error);
@@ -300,15 +300,15 @@ buttonEXT.addEventListener('click', function () {
   // Incrémenter le compteur de votes pour l'option choisie
   if (option === "1") {
     incrEXT1++;
-    console.log(incrEXT1, "test incrEXT1");
+    // console.log(incrEXT1, "test incrEXT1");
     updateVoteEXT("1", incrEXT1); // Mettre à jour le vote pour l'option 1
   } else if (option === "2") {
     incrEXT2++;
-    console.log(incrEXT2, "test incrEXT2");
+    // console.log(incrEXT2, "test incrEXT2");
     updateVoteEXT("2", incrEXT2); // Mettre à jour le vote pour l'option 2
   }
   else{
-    console.log('choisissez un cadidat');
+    // console.log('choisissez un cadidat');
   }
 });
 
@@ -320,7 +320,7 @@ function updateVoteEXT(option, voteCount) {
     voix: increment(voteCount)
   })
   .then(() => {
-    console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
+    // console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
   })
   .catch((error) => {
     console.error("Erreur lors de la mise à jour du nombre de votes pour l'option", option, ": ", error);
@@ -357,15 +357,15 @@ buttonTRES.addEventListener('click', function () {
   // Incrémenter le compteur de votes pour l'option choisie
   if (option === "1") {
     incrTRES1++;
-    console.log(incrTRES1, "test incrTRES1");
+    // console.log(incrTRES1, "test incrTRES1");
     updateVoteTRES("1", incrTRES1); // Mettre à jour le vote pour l'option 1
   } else if (option === "2") {
     incrTRES2++;
-    console.log(incrTRES2, "test incrTRES2");
+    // console.log(incrTRES2, "test incrTRES2");
     updateVoteTRES("2", incrTRES2); // Mettre à jour le vote pour l'option 2
   }
   else{
-    console.log('choisissez un cadidat');
+    // console.log('choisissez un cadidat');
   }
 });
 
@@ -377,7 +377,7 @@ function updateVoteTRES(option, voteCount) {
     voix: increment(voteCount)
   })
   .then(() => {
-    console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
+    // console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
   })
   .catch((error) => {
     console.error("Erreur lors de la mise à jour du nombre de votes pour l'option", option, ": ", error);
@@ -417,19 +417,19 @@ buttonPEDA.addEventListener('click', function () {
   // Incrémenter le compteur de votes pour l'option choisie
   if (option === "1") {
     incrPEDA1++;
-    console.log(incrPEDA1, "test incrPEDA1");
+    // console.log(incrPEDA1, "test incrPEDA1");
     updateVotePEDA("1", incrPEDA1); // Mettre à jour le vote pour l'option 1
   } else if (option === "2") {
     incrPEDA2++;
-    console.log(incrPEDA2, "test incrPEDA2");
+    // console.log(incrPEDA2, "test incrPEDA2");
     updateVotePEDA("2", incrPEDA2); // Mettre à jour le vote pour l'option 2
   }else if (option === "3") {
     incrPEDA3++;
-    console.log(incrPEDA3, "test incrPEDA3");
+    // console.log(incrPEDA3, "test incrPEDA3");
     updateVotePEDA("3", incrPEDA3); // Mettre à jour le vote pour l'option 2
   }
   else{
-    console.log('choisissez un cadidat');
+    // console.log('choisissez un cadidat');
   }
 });
 
@@ -441,7 +441,7 @@ function updateVotePEDA(option, voteCount) {
     voix: increment(voteCount)
   })
   .then(() => {
-    console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
+    // console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
   })
   .catch((error) => {
     console.error("Erreur lors de la mise à jour du nombre de votes pour l'option", option, ": ", error);
@@ -481,19 +481,19 @@ buttonSPORT.addEventListener('click', function () {
   // Incrémenter le compteur de votes pour l'option choisie
   if (option === "1") {
     incrSPORT1++;
-    console.log(incrSPORT1, "test incrSPORT1");
+    // console.log(incrSPORT1, "test incrSPORT1");
     updateVoteSPORT("1", incrSPORT1); // Mettre à jour le vote pour l'option 1
   } else if (option === "2") {
     incrSPORT2++;
-    console.log(incrSPORT2, "test incrSPORT2");
+    // console.log(incrSPORT2, "test incrSPORT2");
     updateVoteSPORT("2", incrSPORT2); // Mettre à jour le vote pour l'option 2
   }else if (option === "3") {
     incrSPORT3++;
-    console.log(incrSPORT3, "test incrSPORT3");
+    // console.log(incrSPORT3, "test incrSPORT3");
     updateVoteSPORT("3", incrSPORT3); // Mettre à jour le vote pour l'option 2
   }
   else{
-    console.log('choisissez un cadidat');
+    // console.log('choisissez un cadidat');
   }
 });
 
@@ -505,7 +505,7 @@ function updateVoteSPORT(option, voteCount) {
     voix: increment(voteCount)
   })
   .then(() => {
-    console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
+    // console.log("Nombre de votes pour l'option", option, "mis à jour avec succès !");
   })
   .catch((error) => {
     console.error("Erreur lors de la mise à jour du nombre de votes pour l'option", option, ": ", error);

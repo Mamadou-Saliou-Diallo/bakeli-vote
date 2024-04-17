@@ -13,38 +13,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-// const docRef = doc(db, "cafe", "1");
-
-// try {
-//     const docSnap = await getDoc(docRef);
-//     if (docSnap.exists()) {
-//         // console.log("Données du document:", docSnap.data());
-//         // Vous pouvez utiliser docSnap.data() pour accéder aux données du document
-//         const documentData = docSnap.data().voix;
-//         // Faites quelque chose avec les données récupérées
-//         document.getElementById('voice').innerText+=documentData
-//     } else {
-//         console.log("Ce document n'existe pas !");
-//     }
-// } catch (error) {
-//     console.error("Erreur lors de la récupération du document :", error);
-// }
-// const docRef2 = doc(db, "cafe", "2");
-
-// try {
-//     const docSnap = await getDoc(docRef2);
-//     if (docSnap.exists()) {
-//         // console.log("Données du document:", docSnap.data());
-//         // Vous pouvez utiliser docSnap.data() pour accéder aux données du document
-//         const documentData = docSnap.data().voix;
-//         // Faites quelque chose avec les données récupérées
-//         document.getElementById('voice2').innerText+=documentData
-//     } else {
-//         console.log("Ce document n'existe pas !");
-//     }
-// } catch (error) {
-//     console.error("Erreur lors de la récupération du document :", error);
-// }
 
 // Définir un tableau d'objets contenant les informations sur les documents à récupérer
 const documentsToFetch = [
@@ -83,7 +51,7 @@ async function fetchDocumentData(documentInfo) {
             // Faites quelque chose avec les données récupérées
             document.getElementById(documentInfo.targetElementId).innerText += documentData;
         } else {
-            console.log("Ce document n'existe pas :", documentInfo.id);
+            // console.log("Ce document n'existe pas :", documentInfo.id);
         }
     } catch (error) {
         console.error("Erreur lors de la récupération du document :", error);
